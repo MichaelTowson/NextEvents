@@ -1,12 +1,12 @@
+import { getFeaturedEvents } from '../dummy-data';
 
-
-function HomeIndex() {
+function HomePage() {
 
   return (
     <div>
-      This is the homepage.
+      <ul></ul>
     </div>
   );
 }
 
-export default HomeIndex
+export default HomePage
