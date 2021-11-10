@@ -1,5 +1,5 @@
 import classes from './EventItem.module.css'
-import Link from 'next/link';
+import Button from '../ui/Button.js'
 
 function EventItem(props) {
   //Destructure props
@@ -44,7 +44,7 @@ function EventItem(props) {
 
         {/* Event Link */}
         <div className={classes.actions}>
-          <Link href={exploreLink}>Explore Event</Link>
+          <Button link={exploreLink}>Explore Event</Button>
         </div>
       </div>
     </li>
