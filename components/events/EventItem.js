@@ -1,3 +1,4 @@
+import classes from './EventItem.module.css'
 import Link from 'next/link';
 
 function EventItem(props) {
@@ -25,26 +26,24 @@ function EventItem(props) {
 
   //--- COMPONENT RENDER ---
   return (
-    <li>
-      {/* Serve image from props */}
+    <li className={classes.item}>
+      {/* Event Image - Serve image from props */}
       <img src={'/' + image} alt={title} /> 
       
-      <div>
-        {/* Name */}
-        <div>
-          <div>
-            <h2>{title}</h2>
-          </div>
-          <div>
+      {/* Event Description */}
+      <div className={classes.content}>
+        <div className={classes.summary}>
+          <h2>{title}</h2>
+          <div className={classes.date}>
             <time>{humanReadableDate}</time>
           </div>
-          <div>
+          <div className={classes.address}>
             <address>{formattedLocation}</address>
           </div>
         </div>
 
-        {/* Thing 2 */}
-        <div>
+        {/* Event Link */}
+        <div className={classes.actions}>
           <Link href={exploreLink}>Explore Event</Link>
         </div>
       </div>
