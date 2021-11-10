@@ -1,5 +1,9 @@
+import { Fragment } from 'react';
 import { useRouter } from 'next/router';
-import { getEventById} from '../../dummy-data'
+import { getEventById} from '../../dummy-data';
+import EventSummary from '../../components/event-detail/event-summary';
+import EventLogistics from '../../components/event-detail/event-logistics';
+import EventContent from '../../components/event-detail/event-content';
 
 function EventDetailPage() {
   const router = useRouter();
@@ -22,7 +26,18 @@ function EventDetailPage() {
   //...Otherwise, render the page with event details.
   return (
     <div>
-      Event details go here
+      <Fragment>
+        <EventSummary title={event.title} />
+        <EventLogistics 
+          date={event.date} 
+          address={event.location}
+          image={event.image}
+          imageAlt={event.title}
+          />
+        <EventContent>
+          <p>{event.description}</p>
+        </EventContent>
+      </Fragment>
     </div>
   )
 }
